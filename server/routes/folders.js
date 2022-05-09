@@ -1,10 +1,11 @@
 import express from "express";
 
-import folderRoutes from "../controllers/folders.js";
+import folderController from "../controllers/folders.js";
 
 const router = express.Router();
 
-router.get("/", folderRoutes.getAllFolders);
-router.get("/:id", folderRoutes.getFolderById);
+router.get("/", folderController.getAllFolders);
+router.get("/:id", folderController.getFolderById);
+router.post("/", folderController.createFolder);
 
 export default router;
