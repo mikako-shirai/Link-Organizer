@@ -11,12 +11,21 @@ export default {
     }
   },
 
-  getFolderById(req, res) {
+  async getFolderById(req, res) {
+    const id = parseInt(req.params.id);
     res.send("GET request in folder.js");
   },
 
-  createFolder(req, res) {
-    res.send("POST request in folder.js");
+  async createFolder(req, res) {
+    const folder = req.body;
+    const newFolder = new Folders(folder);
+
+    try {
+      await newFolder.save();
+      res.status(201).send(newFolder);
+    } catch(error) {
+      res.status(409).send(error);
+    }
   }
 
 };
