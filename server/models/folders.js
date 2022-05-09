@@ -7,6 +7,10 @@ const foldersSchema = mongoose.Schema({
     type: Date,
     default: new Date()
   },
+  dateModified: {
+    type: Date,
+    default: new Date()
+  },
   tags: [String]
 });
 

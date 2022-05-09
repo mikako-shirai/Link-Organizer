@@ -16,13 +16,30 @@ body {
   align-items: center;
 }
 
-.app * {
+.app:first-child, .app:last-child {
   font-size: large;
   font-weight: 200;
-  margin: 10vh 5vw 0vh 5vw;
+  text-align: center;
+}
+
+/* -------------------------------------------------------- Navbar */
+
+.navbar {
+  background: rgb(234, 234, 234);
+  height: 100vh;
+}
+
+.navbar * {
+  margin-top: 5vh;
 }
 
 /* -------------------------------------------------------- Folders */
 
+.folders {
+  flex: 1;
+  height: 100vh;
+}
 
-
+.folders * {
+  margin-top: 5vh;
+}

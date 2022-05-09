@@ -2,7 +2,9 @@ import React from "react";
 
 const Folders = () => {
   return (
-    <div>Folders</div>
+    <div className="folders">
+      <div>Folders</div>
+    </div>
   );
 };
 
