@@ -29,8 +29,17 @@ const removeLinkFromFolder = async (folderID, linkID) => {
 
 export default {
 
+  async getAllLinks(req, res) {
+    try {
+      const allLinks = await Links.find({});
+      res.status(200).send({ success: true, data: allLinks });
+    } catch(error) {
+      res.status(400).send({ success: false });
+    }
+  },
+
   async getLinkById(req, res) {
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
 
     try {
       const linkRes = await Links.findById(id);
@@ -61,7 +70,7 @@ export default {
   },
 
   async updateLink(req, res) {
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
     const link = req.body;
 
     try {
@@ -80,8 +89,8 @@ export default {
   },
 
   async deleteLink(req, res) {
-    const linkID = parseInt(req.params.linkID);
-    const folderID = parseInt(req.params.folderID);
+    const linkID = req.params.linkID;
+    const folderID = req.params.folderID;
 
     try {
       const linkRes = await Links.deleteOne({ _id: linkID });

@@ -12,7 +12,7 @@ export default {
   },
 
   async getFolderById(req, res) {
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
 
     try {
       const folderRes = await Folders.findById(id);
@@ -42,7 +42,7 @@ export default {
   },
 
   async updateFolder(req, res) {
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
     const folder = req.body;
 
     try {
@@ -61,7 +61,7 @@ export default {
   },
 
   async deleteFolder(req, res) {
-    const id = parseInt(req.params.id);
+    const id = req.params.id;
 
     try {
       const folderRes = await Folders.deleteOne({ _id: id });
