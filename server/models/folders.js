@@ -6,6 +6,10 @@ const foldersSchema = mongoose.Schema({
     type: [String],
     default:[]
   },
+  linkIDs: {
+    type: [String],
+    default:[]
+  },
   dateCreated: {
     type: Date,
     default: new Date()

@@ -1,14 +1,31 @@
 import Links from "../models/links.js";
 import Folders from "../models/folders.js";
 
-const addLinkToFolder = async (link) => {
-  const url = link.url;
+const getInfo = (link) => {
+  const linkID = link._id;
   const folderID = link.folderID;
+  const url = link.url;
+  return { linkID, folderID, url };
+};
 
+const filterInfo = (folder, linkIDToDelete, urlToDelete) => {
+  const linkIDAll = folder.linkIDs;
+  const urlAll = folder.urls;
+
+  const filteredLinkIDs = linkIDAll.filter(linkID => linkID !== linkIDToDelete);
+  const filteredUrls = urlAll.filter(url => url !== urlToDelete);
+
+  return { filteredLinkIDs, filteredUrls };
+};
+
+const addLinkToFolder = async (link) => {
+  const { linkID, folderID, url } = getInfo(link);
   const folderAtID = await Folders.findById(folderID);
+
+  const newLinkIDs = [...folderAtID.linkIDs, linkID];
   const newUrls = [...folderAtID.urls, url];
 
-  const newFolder = { urls: newUrls, dateModified: new Date() };
+  const newFolder = { linkIDs: newLinkIDs, urls: newUrls, dateModified: new Date() };
   await Folders.findByIdAndUpdate(folderID, newFolder, {
     new: true,
     runValidators: true
@@ -16,14 +33,12 @@ const addLinkToFolder = async (link) => {
 };
 
 const removeLinkFromFolder = async (link) => {
-  const urlToDelete = link.url;
-  const folderID = link.folderID;
-
+  const { linkID, folderID, url } = getInfo(link);
   const folderAtID = await Folders.findById(folderID);
-  const urlAll = folderAtID.urls;
-  const filteredUrls = urlAll.filter(url => url !== urlToDelete);
 
-  const newFolder = { urls: filteredUrls, dateModified: new Date() };
+  const { filteredLinkIDs, filteredUrls } = filterInfo(folderAtID, linkID, url);
+
+  const newFolder = { linkIDs: filteredLinkIDs, urls: filteredUrls, dateModified: new Date() };
   await Folders.findByIdAndUpdate(folderID, newFolder, {
     new: true,
     runValidators: true

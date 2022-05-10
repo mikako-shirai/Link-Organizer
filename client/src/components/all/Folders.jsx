@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
-import Links from "./links";
+import Links from "./Links.jsx";
 
 const Folders = () => {
   const [folders, setFolders] = useState([]);
