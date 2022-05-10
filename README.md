@@ -10,6 +10,7 @@ This project is built using the following frameworks/services
 - React  
 - Express.js  
 - MongoDB  
+- Mongoose  
 - Heroku  
 - ~~Google Chrome Extension~~ (work in progress)  
   
@@ -66,7 +67,7 @@ $ npm run server
   
   
 ## Issues  
-Current Issues to Fix:  
+Current issues to fix:  
 - [ ] (work in progress)
   
   

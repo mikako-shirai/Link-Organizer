@@ -33,11 +33,11 @@ const Folders = ({ switchDisplay }) => {
 
   return (
     <div className="folders">
-      <div className="folders-grid">
+      <div className="grid-folder">
         {folders.map((folder, index) => {
           return (
-            <div onClick={() => {handleClick(folder)}} key={index} className="grid-folder">
-              <div className="grid-foldername">{folder.folderName}</div>
+            <div onClick={() => {handleClick(folder)}} key={index} className="grid-folder-block">
+              <div className="grid-folder-name">{folder.folderName}</div>
               <Links links={links[index]} />
             </div>
           );

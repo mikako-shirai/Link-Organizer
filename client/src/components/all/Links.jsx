@@ -1,15 +1,15 @@
 import React from "react";
 
-import Link from "./Link.jsx";
+import Paths from "./Paths.jsx";
 
 const Links = ({ links }) => {
 
   return (
-    <div className="links-grid">
+    <div className="grid-folder-links">
       {links && links.slice(0, 4).map((link, index) => {
         return (
-          <div key={index} className="grid-link">
-            <Link link={link} />
+          <div key={index} className="grid-folder-links-block">
+            <Paths link={link} />
           </div>
         );
       })}

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 
-const Link = ({ link }) => {
+const Paths = ({ link }) => {
   const [paths, setPaths] = useState([]);
 
   const splitLink = () => {
@@ -22,4 +22,4 @@ const Link = ({ link }) => {
   );
 };
 
-export default Link;
+export default Paths;

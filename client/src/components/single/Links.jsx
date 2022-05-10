@@ -23,9 +23,20 @@ const Links = ({ switchDisplay }) => {
     //
   }, [links]);
 
-  return (
-    <div>Links</div>
-  );
+  // return (
+  //   <div className="links">
+  //     <div className="folders-grid">
+  //       {folders.map((folder, index) => {
+  //         return (
+  //           <div onClick={() => {handleClick(folder)}} key={index} className="grid-folder">
+  //             <div className="grid-foldername">{folder.folderName}</div>
+  //             <Links links={links[index]} />
+  //           </div>
+  //         );
+  //       })}
+  //     </div>
+  //   </div>
+  // );
 };
 
 export default Links;
