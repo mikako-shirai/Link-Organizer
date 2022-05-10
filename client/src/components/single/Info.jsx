@@ -1,18 +1,18 @@
 import React, { useState } from "react";
 
-import NewLink from "./NewLink.jsx";
+import AddLink from "./AddLink.jsx";
 import svg from "../../images/postkit2.svg";
 
 const Info = ({ switchDisplay }) => {
-  const [showNewLink, setShowNewLink] = useState(false);
+  const [showAddLink, setShowAddLink] = useState(false);
 
   return (
     <div className="info">
       <div onClick={() => {switchDisplay.setSwitchDisplay(false)}} className="info-btn btn-child">Go Back</div>
-      <div onClick={() => {setShowNewLink(true)}} className="info-btn">Add Link</div>
+      <div onClick={() => {setShowAddLink(true)}} className="info-btn">Add Link</div>
       <img src={svg} alt="" className="navbar-svg" />
 
-      {showNewLink && <NewLink switchDisplay={switchDisplay} setShowNewLink={setShowNewLink} />}
+      {showAddLink && <AddLink switchDisplay={switchDisplay} setShowAddLink={setShowAddLink} />}
     </div>
   );
 };

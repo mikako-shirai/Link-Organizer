@@ -15,7 +15,7 @@ const Links = ({ links }) => {
           );
         })
         :
-        ["", "", "", ""].map((link, index) => {
+        [""].map((link, index) => {
           return (
             <div key={index} className="grid-folder-link-block empty">
               <Paths link={link} />
