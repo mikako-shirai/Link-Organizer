@@ -140,6 +140,7 @@ body {
 
 .empty {
   background: rgba(255, 255, 255, 0);
+  box-shadow: none;
 }
 
 .grid-folder-block:hover .grid-folder-link-block,
