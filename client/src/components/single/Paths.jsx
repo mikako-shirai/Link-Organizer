@@ -14,11 +14,13 @@ const Paths = ({ link }) => {
   }, []);
 
   return (
-    <div className="paths grid-link-paths">
-      {paths.length > 0 && paths.map((path, index) =>
-        <div key={index}>{`${path}${index === paths.length-1 ? "" : "/\n"}`}</div>
-      )}
-    </div>
+    <a href={link}>
+      <div className="paths grid-link-paths">
+        {paths.length > 0 && paths.map((path, index) =>
+          <div key={index}>{`${path}${index === paths.length-1 ? "" : "/\n"}`}</div>
+        )}
+      </div>
+    </a>
   );
 };
 

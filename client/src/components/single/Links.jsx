@@ -14,7 +14,7 @@ const Links = ({ switchDisplay }) => {
         return res.data.data;
       })
     );
-    setLinks(allLinks);
+    setLinks(allLinks.reverse());
   };
 
   const handleClick = (link) => {

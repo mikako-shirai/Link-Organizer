@@ -33,13 +33,10 @@ body {
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
 }
 
-.navbar * {
-  margin-top: 5vh;
-}
-
 .navbar-btn {
   background: #cddfdb;
   width: fit-content;
+  margin-top: 5vh;
   padding: 1rem 3rem;
   border-radius: 5rem;
   cursor: pointer;
@@ -48,6 +45,18 @@ body {
 
 .navbar-btn:hover, .navbar-btn:active {
   background: rgb(226, 226, 226);
+}
+
+.navbar-child {
+  margin-top: 10vh;
+}
+
+.navbar-svg {
+  position: fixed;
+  left: 3.4vw;
+  bottom: 11vh;
+  height: 8.5vw;
+  width: 8.5vw;
 }
 
 /* -------------------------------------------------------- all / Folders */
@@ -112,8 +121,9 @@ body {
 }
 
 .grid-folder-link-block {
-  color: rgb(136, 136, 136);
+  color: rgb(162, 162, 162);
   background: #ffffff;
+  background: #f9f9f9;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -125,6 +135,7 @@ body {
   padding: 0;
   border-radius: 4px;
   cursor: pointer;
+  overflow: scroll;
   box-shadow: 0 1px 15px rgba(0, 0, 0, 0.12);
 }
 
@@ -141,8 +152,25 @@ body {
   justify-content: center;
   align-items: center;
   word-wrap: break-word;
-  overflow: scroll;
+  padding: 1.2rem;
 }
+
+/* -------------------------------------------------------- all / NewFolder */
+
+
+
+
+
+
+
+/* -------------------------------------------------------- all / NewLink */
+
+
+
+
+
+
+
 
 /* -------------------------------------------------------- single / Info */
 
@@ -156,13 +184,10 @@ body {
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
 }
 
-.info * {
-  margin-top: 5vh;
-}
-
 .info-btn {
   background: #ffffff;
   width: fit-content;
+  margin-top: 10vh;
   padding: 1rem 3rem;
   border-radius: 5rem;
   cursor: pointer;
@@ -200,8 +225,8 @@ body {
   height: fit-content;
   width: fit-content;
   margin: 0 auto;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
   padding: 0;
   border-radius: 0.8rem;
   cursor: pointer;
@@ -231,11 +256,19 @@ body {
 /* -------------------------------------------------------- single / Paths */
 
 .grid-link-paths {
-  height: 13vw;
-  width: 14vw;
+  height: 15vw;
+  width: 16vw;
   padding: 1.4rem;
 }
 
+a {
+  color: rgb(129, 129, 129);
+  text-decoration: none;
+}
+
+a:hover, a:active {
+  color: rgb(116, 116, 116);
+}
 
 
 

@@ -10,7 +10,7 @@ const Folders = ({ switchDisplay }) => {
   const getAllFolders = async () => {
     const res = await axios.get("/folders");
     const allFolders = res.data.data;
-    setFolders(allFolders);
+    setFolders(allFolders.reverse());
   };
 
   const getURLsForFolder = () => {
