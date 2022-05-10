@@ -15,14 +15,13 @@ This project is built using the following frameworks/services
   
 
 ## Getting Started  
-All _front-end_ files are under the `./client` folder.  
-All _back-end_ files are under the `./server` folder.  
+All _front-end_ files are under the `./client` folder and all _back-end_ files are under the `./server` folder.  
   
 1. clone this repository  
 ```
 $ git clone https://github.com/mikako-shirai/Link-Organizer.git
 ```  
-2. move to the root _Link-Organizer_ directory  
+2. move to the root `Link-Organizer` directory  
 ```
 $ cd Link-Organizer
 ```  
@@ -30,7 +29,7 @@ $ cd Link-Organizer
 ```
 $ npm install
 ```  
-4. open _separate_ terminal and move to _client_ directory  
+4. open separate terminal and move to _client_ directory  
 ```
 $ cd client
 ```  
@@ -43,7 +42,7 @@ $ npm install
   
 ## Setting Up Database  
 Please sign up for [MongoDB](https://www.mongodb.com/) if you haven't created an account.  
-Once you’ve logged in successfully, create a new cluster. Refer to [this](https://medium.com/featurepreneur/working-mongodb-5ae6a9d53462) article if you are not familiar with MongoDb.    
+Once you’ve logged in successfully, create a new cluster. Refer to [this](https://medium.com/featurepreneur/working-mongodb-5ae6a9d53462) article if you are not familiar with MongoDB.    
   
 1. create `.env` file in the root directory (`./`)  
 2. provide your credentials there in the provided format (key=value)
@@ -53,7 +52,7 @@ MONGODB_URL=[your-mongodb-uri-here]
   
   
 ## Runs the App  
-5. run the react in _frontend_ terminal (`./client`)  
+5. run React in _frontend_ terminal (`./client`)  
 ```
 $ npm start
 ```  
@@ -61,7 +60,7 @@ $ npm start
 ```
 $ npm run server
 ```  
-7. open [http://localhost:3000](http://localhost:3000) to view it in your browser
+7. open [http://localhost:3000](http://localhost:3000) to view the app in your browser
   
 8. organize your browser experience using **PostKit**!  
   
