@@ -51,7 +51,7 @@ MONGODB_URL=[your-mongodb-uri-here]
 ```  
   
   
-## Runs the App  
+## Start the App  
 5. run React in _frontend_ terminal (`./client`)  
 ```
 $ npm start
@@ -62,7 +62,7 @@ $ npm run server
 ```  
 7. open [http://localhost:3000](http://localhost:3000) to view the app in your browser
   
-8. organize your browser experience using **PostKit**!  
+8. organize your browser experience using **[PostKit](https://postkit.herokuapp.com/)**!  
   
   
 ## Issues  
