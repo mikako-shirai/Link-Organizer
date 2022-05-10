@@ -4,6 +4,7 @@ import dotenv from "dotenv";
 import cors from "cors";
 
 import folderRoutes from "./routes/folders.js";
+import linkRoutes from "./routes/links.js";
 
 dotenv.config();
 const app = express();
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 
 app.use("/folders", folderRoutes);
+app.use("/links", linkRoutes);
 
 const PORT = process.env.PORT || 5000;
 

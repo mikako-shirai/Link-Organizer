@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const linkSchema = mongoose.Schema({
   folderID: String,
-  caption: [String],
+  caption: String,
   dateAdded: {
     type: Date,
     default: new Date()
