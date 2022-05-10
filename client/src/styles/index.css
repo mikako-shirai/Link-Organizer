@@ -212,8 +212,10 @@ body {
   margin-top: 3vh;
 }
 
+.form select,
 .form input,
 .form textarea {
+  color: rgb(129, 129, 129);
   width: 24rem;
   margin-top: 3vh;
   padding: 1rem;
