@@ -8,6 +8,6 @@ router.get("/", linkController.getAllLinks);
 router.get("/:id", linkController.getLinkById);
 router.post("/", linkController.createLink);
 router.put("/:id", linkController.updateLink);
-router.delete("/:folderID/:linkID", linkController.deleteLink);
+router.delete("/:id", linkController.deleteLink);
 
 export default router;

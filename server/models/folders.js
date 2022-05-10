@@ -2,7 +2,7 @@ import mongoose from "mongoose";
 
 const foldersSchema = mongoose.Schema({
   folderName: String,
-  linkIDs: {
+  urls: {
     type: [String],
     default:[]
   },

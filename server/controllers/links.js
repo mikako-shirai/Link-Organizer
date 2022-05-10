@@ -2,25 +2,28 @@ import Links from "../models/links.js";
 import Folders from "../models/folders.js";
 
 const addLinkToFolder = async (link) => {
-  const linkID = link._id;
+  const url = link.url;
   const folderID = link.folderID;
 
   const folderAtID = await Folders.findById(folderID);
-  const newLinkIDs = [...folderAtID.linkIDs, linkID];
+  const newUrls = [...folderAtID.urls, url];
 
-  const newFolder = { linkIDs: newLinkIDs, dateModified: new Date() };
+  const newFolder = { urls: newUrls, dateModified: new Date() };
   await Folders.findByIdAndUpdate(folderID, newFolder, {
     new: true,
     runValidators: true
   });
 };
 
-const removeLinkFromFolder = async (folderID, linkID) => {
-  const folderAtID = await Folders.findById(folderID);
-  const linkIDAll = folderAtID.linkIDs;
-  const filteredLinkIDs = linkIDAll.filter(id => id !== linkID);
+const removeLinkFromFolder = async (link) => {
+  const urlToDelete = link.url;
+  const folderID = link.folderID;
 
-  const newFolder = { linkIDs: filteredLinkIDs, dateModified: new Date() };
+  const folderAtID = await Folders.findById(folderID);
+  const urlAll = folderAtID.urls;
+  const filteredUrls = urlAll.filter(url => url !== urlToDelete);
+
+  const newFolder = { urls: filteredUrls, dateModified: new Date() };
   await Folders.findByIdAndUpdate(folderID, newFolder, {
     new: true,
     runValidators: true
@@ -89,17 +92,16 @@ export default {
   },
 
   async deleteLink(req, res) {
-    const linkID = req.params.linkID;
-    const folderID = req.params.folderID;
+    const id = req.params.id;
 
     try {
-      const linkRes = await Links.deleteOne({ _id: linkID });
+      const linkRes = await Links.deleteOne({ _id: id });
 
       if (!linkRes) {
         res.status(400).send({ success: false })
         return;
       }
-      await removeLinkFromFolder(folderID, linkID);
+      await removeLinkFromFolder(linkRes);
       res.status(200).send({ success: true, data: linkRes });
     } catch(error) {
       res.status(400).send({ success: false });

@@ -26,6 +26,7 @@ body {
 
 .navbar {
   height: 100vh;
+  width: 15vw;
   box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.119);
 }
 
@@ -39,6 +40,7 @@ body {
   background: rgb(234, 234, 234);
   flex: 1;
   height: 100vh;
+  overflow: auto;
 }
 
 .folders-grid {
@@ -46,22 +48,50 @@ body {
   grid-template-columns: repeat(3, 1fr);
   justify-content: center;
   align-items: center;
-  grid-gap: 10px;
+  grid-row-gap: 5vh;
   margin-top: 10vh;
   margin-bottom: 10vh;
 }
 
 .grid-folder {
-  color: rgb(203, 203, 203);
+  color: rgb(136, 136, 136);
   background: #ffffff;
   text-align: center;
-  height: 250px;
-  width: 350px;
+  height: fit-content;
+  width: fit-content;
   margin: 0 auto;
-  padding: 0px;
-  padding-top: 80px;
-  border: solid;
-  border-radius: 8px;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  padding: 0;
+  border-radius: 0.8rem;
   cursor: pointer;
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
+}
+
+.grid-foldername {
+  padding: 1rem 0;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
+}
+
+.links-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  justify-content: center;
+  align-items: center;
+  grid-gap: 0.8vh;
+  padding: 0.8vh;
+}
+
+.grid-link {
+  color: rgb(136, 136, 136);
+  background: #ffffff;
+  word-wrap: break-word;
+  text-align: center;
+  height: 11vw;
+  width: 11vw;
+  padding: 0px;
+  border-radius: 4px;
+  cursor: pointer;
+  box-shadow: 0 1px 15px rgba(0, 0, 0, 0.12);
 }
