@@ -50,8 +50,8 @@ body {
   justify-content: center;
   align-items: center;
   grid-row-gap: 5vh;
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+  margin-top: 9vh;
+  margin-bottom: 9vh;
 }
 
 .grid-folder {
@@ -70,7 +70,7 @@ body {
 }
 
 .grid-folder:hover, .grid-folder:active {
-  background: #ccdfdb;
+  background: #d4e5e1;
 }
 
 .grid-folder:hover .grid-foldername,

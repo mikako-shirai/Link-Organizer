@@ -1,14 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
-import Navbar from "./components/all/Navbar.jsx";
-import Folders from "./components/all/Folders.jsx";
+import Main from "./components/all/Main.jsx";
+import Focus from "./components/single/Focus.jsx";
 import "./styles/index.css";
 
 const App = () => {
+  const [switchDisplay, setSwitchDisplay] = useState(false);
+  const [selectedFolder, setSelectedFolder] = useState("");
+
   return (
     <div className="app">
-      <Navbar />
-      <Folders />
+      {!switchDisplay && <Main switchDisplay={{ setSwitchDisplay, setSelectedFolder }} />}
+      {switchDisplay && <Focus switchDisplay={{ setSwitchDisplay, selectedFolder }} />}
     </div>
   );
 };

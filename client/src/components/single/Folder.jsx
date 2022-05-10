@@ -1,6 +1,12 @@
 import React from "react";
 
-const Folder = () => {
+const Folder = ({ switchDisplay }) => {
+
+  // const handleClick = () => {
+  //   // switchDisplay.selectedFolder
+  //   // switchDisplay.setSwitchDisplay
+  // };
+
   return (
     <div>Folder</div>
   );

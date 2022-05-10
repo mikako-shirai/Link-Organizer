@@ -3,7 +3,7 @@ import axios from "axios";
 
 import Links from "./Links.jsx";
 
-const Folders = () => {
+const Folders = ({ switchDisplay }) => {
   const [folders, setFolders] = useState([]);
   const [links, setLinks] = useState([]);
 
@@ -16,6 +16,11 @@ const Folders = () => {
   const getURLsForFolder = () => {
     const urls = folders.map((folder) => folder.urls);
     setLinks(urls);
+  };
+
+  const handleClick = (folderID) => {
+    switchDisplay.setSelectedFolder(folderID);
+    switchDisplay.setSwitchDisplay(true);
   };
 
   useEffect(() => {
@@ -31,7 +36,7 @@ const Folders = () => {
       <div className="folders-grid">
         {folders.map((folder, index) => {
           return (
-            <div key={index} className="grid-folder">
+            <div onClick={() => {handleClick(folder._id)}} key={index} className="grid-folder">
               <div className="grid-foldername">{folder.folderName}</div>
               <Links links={links[index]} />
             </div>
