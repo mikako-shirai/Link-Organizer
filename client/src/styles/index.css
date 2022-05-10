@@ -286,6 +286,12 @@ body {
   margin-bottom: 9vh;
 }
 
+.grid-link-title {
+  color: rgb(136, 136, 136);
+  font-size: 2.2rem;
+  font-weight: 200;
+}
+
 .grid-link-block {
   color: rgb(129, 129, 129);
   background: #f9f9f9;

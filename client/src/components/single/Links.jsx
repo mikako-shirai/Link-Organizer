@@ -24,6 +24,7 @@ const Links = ({ switchDisplay }) => {
   return (
     <div className="links">
       <div className="grid-link">
+        <div className="grid-link-title">{switchDisplay.selectedFolder.folderName}</div>
         {links.map((link, index) => {
           return (
             <div key={index} className="grid-link-block">
