@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 
+import Paths from "./Paths";
+
 const Links = ({ switchDisplay }) => {
   const [links, setLinks] = useState([]);
 
@@ -15,28 +17,28 @@ const Links = ({ switchDisplay }) => {
     setLinks(allLinks);
   };
 
+  const handleClick = (link) => {
+
+  };
+
   useEffect(() => {
     getAllLinks();
   }, []);
 
-  useEffect(() => {
-    //
-  }, [links]);
-
-  // return (
-  //   <div className="links">
-  //     <div className="folders-grid">
-  //       {folders.map((folder, index) => {
-  //         return (
-  //           <div onClick={() => {handleClick(folder)}} key={index} className="grid-folder">
-  //             <div className="grid-foldername">{folder.folderName}</div>
-  //             <Links links={links[index]} />
-  //           </div>
-  //         );
-  //       })}
-  //     </div>
-  //   </div>
-  // );
+  return (
+    <div className="links">
+      <div className="grid-link">
+        {links.map((link, index) => {
+          return (
+            <div onClick={() => {handleClick(link)}} key={index} className="grid-link-block">
+              <Paths link={link.url} />
+              <div className="grid-linkcaption">{link.caption}</div>
+            </div>
+          );
+        })}
+      </div>
+    </div>
+  );
 };
 
 export default Links;

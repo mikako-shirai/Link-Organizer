@@ -25,19 +25,35 @@ body {
 /* -------------------------------------------------------- all / Navbar */
 
 .navbar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   height: 100vh;
   width: 15.5vw;
-  box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.119);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
 }
 
 .navbar * {
   margin-top: 5vh;
 }
 
+.navbar-btn {
+  background: #cddfdb;
+  width: fit-content;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  cursor: pointer;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
+}
+
+.navbar-btn:hover, .navbar-btn:active {
+  background: rgb(226, 226, 226);
+}
+
 /* -------------------------------------------------------- all / Folders */
 
 .folders {
-  background: rgb(227, 227, 227);
+  background: rgb(238, 238, 238);
   flex: 1;
   height: 100vh;
   overflow: auto;
@@ -56,7 +72,7 @@ body {
 
 .grid-folder-block {
   color: rgb(136, 136, 136);
-  background: #f9f9f9;
+  background: #cddfdb;
   text-align: center;
   height: fit-content;
   width: fit-content;
@@ -70,7 +86,7 @@ body {
 }
 
 .grid-folder-block:hover, .grid-folder-block:active {
-  background: #cddfdb;
+  background: #b9cdc9;
 }
 
 .grid-folder-name {
@@ -85,7 +101,7 @@ body {
 
 /* -------------------------------------------------------- all / Links */
 
-.grid-folder-links {
+.grid-folder-link {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -95,7 +111,7 @@ body {
   padding: 0.9vh;
 }
 
-.grid-folder-links-block {
+.grid-folder-link-block {
   color: rgb(136, 136, 136);
   background: #ffffff;
   display: flex;
@@ -112,8 +128,8 @@ body {
   box-shadow: 0 1px 15px rgba(0, 0, 0, 0.12);
 }
 
-.grid-folder-block:hover .grid-folder-links-block,
-.grid-folder-block:active .grid-folder-links-block {
+.grid-folder-block:hover .grid-folder-link-block,
+.grid-folder-block:active .grid-folder-link-block {
   background: #fbfefe;
 }
 
@@ -137,7 +153,7 @@ body {
   align-items: center;
   height: 100vh;
   width: 15.5vw;
-  box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.119);
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
 }
 
 .info * {
@@ -150,6 +166,7 @@ body {
   padding: 1rem 3rem;
   border-radius: 5rem;
   cursor: pointer;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
 }
 
 .info-btn:hover, .info-btn:active {
@@ -158,17 +175,16 @@ body {
 
 /* -------------------------------------------------------- single / Links */
 
-/* .folders {
-  background: rgb(227, 227, 227);
+.links {
   flex: 1;
   height: 100vh;
   overflow: auto;
   padding: 0 2vw;
 }
 
-.folders-grid {
+.grid-link {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   justify-content: center;
   align-items: center;
   grid-row-gap: 5vh;
@@ -176,9 +192,10 @@ body {
   margin-bottom: 9vh;
 }
 
-.grid-folder {
-  color: rgb(136, 136, 136);
+.grid-link-block {
+  color: rgb(129, 129, 129);
   background: #f9f9f9;
+  font-size: 2rem;
   text-align: center;
   height: fit-content;
   width: fit-content;
@@ -191,21 +208,33 @@ body {
   box-shadow: 0 2px 35px rgba(0, 0, 0, 0.1);
 }
 
-.grid-folder:hover, .grid-folder:active {
+.grid-link-block:hover, .grid-link-block:active {
+  color: rgb(116, 116, 116);
   background: #cddfdb;
 }
 
-.grid-foldername {
+.grid-linkcaption {
   background: #ffffff;
-  font-size: 2.3rem;
+  font-size: 2rem;
   font-weight: 200;
   padding: 1.2rem 0;
-  border-top-left-radius: 0.8rem;
-  border-top-right-radius: 0.8rem;
-  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
+  border-bottom-left-radius: 0.8rem;
+  border-bottom-right-radius: 0.8rem;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.1);
 }
 
- */
+.grid-link-block:hover .grid-linkcaption,
+.grid-link-block:active .grid-linkcaption {
+  background: #fbfefe;
+}
+
+/* -------------------------------------------------------- single / Paths */
+
+.grid-link-paths {
+  height: 13vw;
+  width: 14vw;
+  padding: 1.4rem;
+}
 
 
 
