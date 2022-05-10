@@ -22,7 +22,7 @@ body {
   text-align: center;
 }
 
-/* -------------------------------------------------------- Navbar */
+/* -------------------------------------------------------- all / Navbar */
 
 .navbar {
   height: 100vh;
@@ -34,7 +34,7 @@ body {
   margin-top: 5vh;
 }
 
-/* -------------------------------------------------------- Folders */
+/* -------------------------------------------------------- all / Folders */
 
 .folders {
   background: rgb(226, 226, 226);
@@ -85,7 +85,7 @@ body {
   box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
 }
 
-/* -------------------------------------------------------- Links */
+/* -------------------------------------------------------- all / Links */
 
 .links-grid {
   display: grid;
@@ -104,6 +104,7 @@ body {
   justify-content: center;
   align-items: center;
   text-align: center;
+  font-weight: 100;
   font-size: 2.1rem;
   height: 11vw;
   width: 11vw;
@@ -118,7 +119,7 @@ body {
   background: #fbfefe;
 }
 
-/* -------------------------------------------------------- Link */
+/* -------------------------------------------------------- all / Link */
 
 .paths {
   display: flex;
@@ -128,6 +129,75 @@ body {
   word-wrap: break-word;
   overflow: scroll;
 }
+
+/* -------------------------------------------------------- single / Info */
+
+.info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+  width: 15.5vw;
+  box-shadow: 0 0.7rem 1rem rgba(0, 0, 0, 0.119);
+}
+
+.info * {
+  margin-top: 5vh;
+}
+
+.info-btn {
+  background: rgb(226, 226, 226);
+  width: fit-content;
+  padding: 1rem 3rem;
+  border-radius: 5rem;
+  cursor: pointer;
+}
+
+.info-btn:hover, .info-btn:active {
+  background: #d4e5e1;
+}
+
+/* -------------------------------------------------------- single / Links */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------- single / Folder ??? */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

@@ -1,13 +1,14 @@
 import React from "react";
 
 import Info from "./Info.jsx";
-import Folder from "./Folder.jsx";
+import Links from "./Links.jsx";
 
 const Focus = ({ switchDisplay }) => {
+
   return (
     <>
-      <Info />
-      <Folder switchDisplay={switchDisplay} />
+      <Info switchDisplay={switchDisplay} />
+      <Links switchDisplay={switchDisplay} />
     </>
   );
 };

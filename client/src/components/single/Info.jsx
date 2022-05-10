@@ -1,8 +1,11 @@
 import React from "react";
 
-const Info = () => {
+const Info = ({ switchDisplay }) => {
   return (
-    <div>Info</div>
+    <div className="info">
+      <div>Info</div>
+      <div onClick={() => {switchDisplay.setSwitchDisplay(false)}} className="info-btn">Go Back</div>
+    </div>
   );
 };
 

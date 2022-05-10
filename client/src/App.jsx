@@ -6,7 +6,7 @@ import "./styles/index.css";
 
 const App = () => {
   const [switchDisplay, setSwitchDisplay] = useState(false);
-  const [selectedFolder, setSelectedFolder] = useState("");
+  const [selectedFolder, setSelectedFolder] = useState({});
 
   return (
     <div className="app">

@@ -18,8 +18,8 @@ const Folders = ({ switchDisplay }) => {
     setLinks(urls);
   };
 
-  const handleClick = (folderID) => {
-    switchDisplay.setSelectedFolder(folderID);
+  const handleClick = (folder) => {
+    switchDisplay.setSelectedFolder(folder);
     switchDisplay.setSwitchDisplay(true);
   };
 
@@ -36,7 +36,7 @@ const Folders = ({ switchDisplay }) => {
       <div className="folders-grid">
         {folders.map((folder, index) => {
           return (
-            <div onClick={() => {handleClick(folder._id)}} key={index} className="grid-folder">
+            <div onClick={() => {handleClick(folder)}} key={index} className="grid-folder">
               <div className="grid-foldername">{folder.folderName}</div>
               <Links links={links[index]} />
             </div>
