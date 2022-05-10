@@ -1,70 +1,83 @@
-# Getting Started with Create React App
+# cc26 Solo MVP Project - Link Organizer
+  
+**PostKit** is a web application designed to help you organize your experience with browsers.  
+You can organize and group URLs as you like, and share it with people.   
+No more going back-and-forth between your browser and slack channels, guaranteed.  
+  
+  
+## Built with  
+This project is built using the following frameworks/services  
+- React  
+- Express.js  
+- MongoDB  
+- Heroku  
+- ~~Google Chrome Extension~~ (work in progress)  
+  
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
-
-## Available Scripts
-
-In the project directory, you can run:
-
-### `npm start`
-
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
-
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Getting Started  
+All _front-end_ files are under the `./client` folder.  
+All _back-end_ files are under the `./server` folder.  
+  
+1. clone this repository  
+```
+$ git clone https://github.com/mikako-shirai/Link-Organizer.git
+```  
+2. move to the root _Link-Organizer_ directory  
+```
+$ cd Link-Organizer
+```  
+3. install dependencies for _backend_  
+```
+$ npm install
+```  
+4. open _separate_ terminal and move to _client_ directory  
+```
+$ cd client
+```  
+5. install dependencies for _frontend_  
+```
+$ npm install
+```  
+&ensp;&ensp;*please keep both terminal open separately  
+  
+  
+## Setting Up Database  
+Please sign up for [MongoDB](https://www.mongodb.com/) if you haven't created an account.  
+Once you’ve logged in successfully, create a new cluster. Refer to [this](https://medium.com/featurepreneur/working-mongodb-5ae6a9d53462) article if you are not familiar with MongoDb.    
+  
+1. create `.env` file in the root directory (`./`)  
+2. provide your credentials there in the provided format (key=value)
+```
+MONGODB_URL=[your-mongodb-uri-here]
+```  
+  
+  
+## Runs the App  
+5. run the react in _frontend_ terminal (`./client`)  
+```
+$ npm start
+```  
+6. run the server in _backend_ terminal (`./`)  
+```
+$ npm run server
+```  
+7. open [http://localhost:3000](http://localhost:3000) to view it in your browser
+  
+8. organize your browser experience using **PostKit**!  
+  
+  
+## Issues  
+Current Issues to Fix:  
+- [ ] (work in progress)
+  
+  
+## Backlog  
+Future features to implement:  
+- [ ] Log-in and sign-up feature.
+- [ ] User authentication.
+- [ ] Page preview for each link.
+- [ ] Options for folder privacy (public/private).
+- [ ] Adding tags to both folders and links.
+- [ ] Filter by tags.
+- [ ] Sorting oprtions for folders and links.
+- [ ] Create a Google Chrome Extension and make it easier to add links to a folder.
