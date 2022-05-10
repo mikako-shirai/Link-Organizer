@@ -4,11 +4,19 @@ const foldersSchema = mongoose.Schema({
   folderName: String,
   urls: {
     type: [String],
-    default:[]
+    default: []
   },
   linkIDs: {
     type: [String],
-    default:[]
+    default: []
+  },
+  description: {
+    type: String,
+    default: ""
+  },
+  tags: {
+    type: [String],
+    default: []
   },
   dateCreated: {
     type: Date,
@@ -17,10 +25,6 @@ const foldersSchema = mongoose.Schema({
   dateModified: {
     type: Date,
     default: new Date()
-  },
-  tags: {
-    type: [String],
-    default:[]
   }
 });
 

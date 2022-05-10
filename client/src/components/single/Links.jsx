@@ -17,10 +17,6 @@ const Links = ({ switchDisplay }) => {
     setLinks(allLinks.reverse());
   };
 
-  const handleClick = (link) => {
-
-  };
-
   useEffect(() => {
     getAllLinks();
   }, []);
@@ -30,7 +26,7 @@ const Links = ({ switchDisplay }) => {
       <div className="grid-link">
         {links.map((link, index) => {
           return (
-            <div onClick={() => {handleClick(link)}} key={index} className="grid-link-block">
+            <div key={index} className="grid-link-block">
               <Paths link={link.url} />
               <div className="grid-linkcaption">{link.caption}</div>
             </div>

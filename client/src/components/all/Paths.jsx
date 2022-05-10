@@ -4,14 +4,20 @@ const Paths = ({ link }) => {
   const [paths, setPaths] = useState([]);
 
   const splitLink = () => {
-    const trimmedUrl = link.split("://")[1];
-    const pathAll = trimmedUrl.split("/");
-    setPaths(pathAll);
+    if (link) {
+      const trimmedUrl = link.split("://")[1];
+      const pathAll = trimmedUrl.split("/");
+      setPaths(pathAll);
+    }
   };
 
   useEffect(() => {
     splitLink();
   }, []);
+
+  useEffect(() => {
+    splitLink();
+  }, [link]);
 
   return (
     <div className="paths">

@@ -13,7 +13,7 @@ const linkSchema = mongoose.Schema({
   },
   tags: {
     type: [String],
-    default:[]
+    default: []
   }
 });
 
