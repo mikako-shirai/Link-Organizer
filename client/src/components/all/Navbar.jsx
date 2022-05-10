@@ -10,7 +10,8 @@ const Navbar = () => {
 
   return (
     <div className="navbar">
-      <div onClick={() => {setShowNewFolder(true)}} className="navbar-btn btn-child">New Folder</div>
+      <div className="app-title">PostKit</div>
+      <div onClick={() => {setShowNewFolder(true)}} className="navbar-btn navbar-btn-child">New Folder</div>
       <div onClick={() => {setShowNewLink(true)}} className="navbar-btn">New Link</div>
       <img src={svg} alt="" className="navbar-svg" />
 

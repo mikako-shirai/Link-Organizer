@@ -8,7 +8,8 @@ const Info = ({ switchDisplay }) => {
 
   return (
     <div className="info">
-      <div onClick={() => {switchDisplay.setSwitchDisplay(false)}} className="info-btn btn-child">Go Back</div>
+      <div className="app-title">PostKit</div>
+      <div onClick={() => {switchDisplay.setSwitchDisplay(false)}} className="info-btn info-btn-child">Go Back</div>
       <div onClick={() => {setShowAddLink(true)}} className="info-btn">Add Link</div>
       <img src={svg} alt="" className="navbar-svg" />
 
