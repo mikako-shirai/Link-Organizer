@@ -33,7 +33,7 @@ const Folders = () => {
           return (
             <div key={index} className="grid-folder">
               <div className="grid-foldername">{folder.folderName}</div>
-              <Links links={links[index]} index={index} />
+              <Links links={links[index]} />
             </div>
           );
         })}
