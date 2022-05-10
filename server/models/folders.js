@@ -2,7 +2,10 @@ import mongoose from "mongoose";
 
 const foldersSchema = mongoose.Schema({
   folderName: String,
-  linkIDs: [String],
+  linkIDs: {
+    type: [String],
+    default:[]
+  },
   dateCreated: {
     type: Date,
     default: new Date()
@@ -11,7 +14,10 @@ const foldersSchema = mongoose.Schema({
     type: Date,
     default: new Date()
   },
-  tags: [String]
+  tags: {
+    type: [String],
+    default:[]
+  }
 });
 
 const Folders = mongoose.model("Folders", foldersSchema);

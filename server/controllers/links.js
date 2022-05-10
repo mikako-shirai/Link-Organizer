@@ -1,13 +1,27 @@
 import Links from "../models/links.js";
 import Folders from "../models/folders.js";
 
+const addLinkToFolder = async (link) => {
+  const linkID = link._id;
+  const folderID = link.folderID;
+
+  const folderAtID = await Folders.findById(folderID);
+  const newLinkIDs = [...folderAtID.linkIDs, linkID];
+
+  const newFolder = { linkIDs: newLinkIDs, dateModified: new Date() };
+  await Folders.findByIdAndUpdate(folderID, newFolder, {
+    new: true,
+    runValidators: true
+  });
+};
+
 const removeLinkFromFolder = async (folderID, linkID) => {
   const folderAtID = await Folders.findById(folderID);
   const linkIDAll = folderAtID.linkIDs;
   const filteredLinkIDs = linkIDAll.filter(id => id !== linkID);
 
-  const folder = { linkIDs: filteredLinkIDs, dateModified: new Date() };
-  await Folders.findByIdAndUpdate(folderID, folder, {
+  const newFolder = { linkIDs: filteredLinkIDs, dateModified: new Date() };
+  await Folders.findByIdAndUpdate(folderID, newFolder, {
     new: true,
     runValidators: true
   });
@@ -32,11 +46,15 @@ export default {
 
   async createLink(req, res) {
     const link = req.body;
-    const newLink = new Links(link);
 
     try {
-      await newLink.save();
-      res.status(201).send({ success: true, data: newLink });
+      const linkRes = await Links.create(link);
+      if (!linkRes) {
+        res.status(400).send({ success: false });
+        return;
+      }
+      await addLinkToFolder(linkRes);
+      res.status(201).send({ success: true, data: linkRes });
     } catch(error) {
       res.status(409).send({ success: false });
     }
@@ -72,7 +90,7 @@ export default {
         res.status(400).send({ success: false })
         return;
       }
-      removeLinkFromFolder(folderID, linkID);
+      await removeLinkFromFolder(folderID, linkID);
       res.status(200).send({ success: true, data: linkRes });
     } catch(error) {
       res.status(400).send({ success: false });

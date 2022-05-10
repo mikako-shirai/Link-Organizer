@@ -28,11 +28,14 @@ export default {
 
   async createFolder(req, res) {
     const folder = req.body;
-    const newFolder = new Folders(folder);
 
     try {
-      await newFolder.save();
-      res.status(201).send({ success: true, data: newFolder });
+      const folderRes = await Folders.create(folder);
+      if (!folderRes) {
+        res.status(400).send({ success: false });
+        return;
+      }
+      res.status(201).send({ success: true, data: folderRes });
     } catch(error) {
       res.status(409).send({ success: false });
     }
