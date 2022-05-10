@@ -41,6 +41,27 @@ body {
   height: 100vh;
 }
 
-.folders * {
-  margin-top: 5vh;
+.folders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: center;
+  align-items: center;
+  grid-gap: 10px;
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+
+.grid-folder {
+  color: rgb(203, 203, 203);
+  background: #ffffff;
+  text-align: center;
+  height: 250px;
+  width: 350px;
+  margin: 0 auto;
+  padding: 0px;
+  padding-top: 80px;
+  border: solid;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 1px 20px rgba(0, 0, 0, 0.15);
 }
