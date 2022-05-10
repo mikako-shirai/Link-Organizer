@@ -29,7 +29,7 @@ $ cd Link-Organizer
 ```
 $ npm install
 ```  
-4. open separate terminal and move to _client_ directory  
+4. open separate terminal and move to the `client` directory  
 ```
 $ cd client
 ```  
@@ -37,7 +37,7 @@ $ cd client
 ```
 $ npm install
 ```  
-&ensp;&ensp;*please keep both terminal open separately  
+&ensp;&ensp;*keep both terminal open separately  
   
   
 ## Setting Up Database  
@@ -62,7 +62,7 @@ $ npm run server
 ```  
 7. open [http://localhost:3000](http://localhost:3000) to view the app in your browser
   
-8. organize your browser experience using **[PostKit](https://postkit.herokuapp.com/)**!  
+8. organize your browser experience using **PostKit**!  
   
   
 ## Issues  
