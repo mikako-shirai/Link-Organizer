@@ -1,7 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
+import { UpdateData } from "../../App.jsx";
+
 const NewLink = ({ setShowNewLink }) => {
+  const { setUpdateData } = useContext(UpdateData);
   const [form, setForm] = useState({ url: "", folderID: "", caption: "" });
   const [folderIDs, setFolderIDs] = useState([]);
   const [folderNames, setFolderNames] = useState([]);
@@ -22,6 +25,7 @@ const NewLink = ({ setShowNewLink }) => {
     if (!link) return;
 
     await axios.post("/links", link);
+    setUpdateData(true);
     setShowNewLink(false);
   };
 

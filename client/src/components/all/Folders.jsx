@@ -1,21 +1,24 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
+import { UpdateData } from "../../App.jsx";
 import Links from "./Links.jsx";
 
 const Folders = ({ switchDisplay }) => {
+  const { updateData, setUpdateData } = useContext(UpdateData);
   const [folders, setFolders] = useState([]);
-  const [links, setLinks] = useState([]);
+  const [linksForFolders, setLinksForFolders] = useState([]);
 
   const getAllFolders = async () => {
     const res = await axios.get("/folders");
     const allFolders = res.data.data;
     setFolders(allFolders.reverse());
+    setUpdateData(false);
   };
 
   const getURLsForFolder = () => {
     const urls = folders.map((folder) => folder.urls);
-    setLinks(urls);
+    setLinksForFolders(urls);
   };
 
   const handleClick = (folder) => {
@@ -28,6 +31,10 @@ const Folders = ({ switchDisplay }) => {
   }, []);
 
   useEffect(() => {
+    getAllFolders();
+  }, [updateData]);
+
+  useEffect(() => {
     getURLsForFolder();
   }, [folders]);
 
@@ -38,7 +45,7 @@ const Folders = ({ switchDisplay }) => {
           return (
             <div onClick={() => {handleClick(folder)}} key={index} className="grid-folder-block">
               <div className="grid-folder-name">{folder.folderName}</div>
-              <Links links={links[index]} />
+              <Links links={linksForFolders[index]} />
             </div>
           );
         })}

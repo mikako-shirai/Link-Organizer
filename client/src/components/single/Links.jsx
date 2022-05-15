@@ -1,9 +1,11 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import axios from "axios";
 
+import { UpdateData } from "../../App.jsx";
 import Paths from "./Paths";
 
 const Links = ({ switchDisplay }) => {
+  const { updateData, setUpdateData } = useContext(UpdateData);
   const [links, setLinks] = useState([]);
 
   const getAllLinks = async () => {
@@ -15,11 +17,16 @@ const Links = ({ switchDisplay }) => {
       })
     );
     setLinks(allLinks.reverse());
+    setUpdateData(false);
   };
 
   useEffect(() => {
     getAllLinks();
   }, []);
+
+  useEffect(() => {
+    getAllLinks();
+  }, [updateData]);
 
   return (
     <div className="links">

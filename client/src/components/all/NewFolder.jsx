@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 
+import { UpdateData } from "../../App.jsx";
+
 const NewFolder = ({ setShowNewFolder }) => {
+  const { setUpdateData } = useContext(UpdateData);
   const [form, setForm] = useState({ folderName: "", description: "" });
 
   const createNewFolder = async () => {
@@ -9,6 +12,7 @@ const NewFolder = ({ setShowNewFolder }) => {
     if (!folder) return;
 
     await axios.post("/folders", folder);
+    setUpdateData(true);
     setShowNewFolder(false);
   };
 

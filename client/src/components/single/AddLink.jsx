@@ -1,7 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import axios from "axios";
 
+import { UpdateData } from "../../App.jsx";
+
 const AddLink = ({ switchDisplay, setShowAddLink }) => {
+  const { setUpdateData } = useContext(UpdateData);
   const [form, setForm] = useState({ url: "", folderID: "", caption: "" });
 
   const addNewLink = async () => {
@@ -12,6 +15,7 @@ const AddLink = ({ switchDisplay, setShowAddLink }) => {
       ...link,
       folderID: switchDisplay.selectedFolder._id
     });
+    setUpdateData(true);
     setShowAddLink(false);
   };
 
