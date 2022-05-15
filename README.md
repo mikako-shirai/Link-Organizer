@@ -1,7 +1,7 @@
 # cc26 Solo MVP Project - Link Organizer
   
 **PostKit** is a web application designed to help you organize your experience with browsers.  
-You can organize and group URLs as you like, and share it with people.   
+You can organize and group URLs as you like, and share it with other people.   
 No more going back-and-forth between your browser and slack channels, guaranteed.  
   
   
@@ -65,19 +65,14 @@ $ npm run server
   
 8. organize your browser experience using **PostKit**!  
   
-  
-## Issues  
-Current issues to fix:  
-- [ ] (work in progress)
-  
-  
+    
 ## Backlog  
 Future features to implement:  
-- [ ] Log-in and sign-up feature.
-- [ ] User authentication.
-- [ ] Page preview for each link.
-- [ ] Options for folder privacy (public/private).
-- [ ] Adding tags to both folders and links.
-- [ ] Filter by tags.
-- [ ] Sorting oprtions for folders and links.
-- [ ] Create a Google Chrome Extension and make it easier to add links to a folder.
+- [ ] Log-in and sign-up feature
+- [ ] User authentication
+- [ ] Page preview for each link
+- [ ] Options for folder privacy (public/private)
+- [ ] Adding tags to both folders and links
+- [ ] Filter by tags
+- [ ] Sorting oprtions for folders and links
+- [ ] Create a Google Chrome Extension and make it easier to add links to a folder
